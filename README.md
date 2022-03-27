@@ -56,6 +56,34 @@ Flags:
 挖矿地址配置成 `stratum+tcp://local-ip:3333`，这样流量到中转 VPS 就会被加密
 
 
+## 示例
+
+本地跑 `pfproxy` 时推荐用个专门的 `NUC`，装个 `Ubuntu` 系统，路由器为此 `NUC` 设置静态 IP
+
+
+#### KDA
+
+矿机不直接支持 `TLS`，需要本地部署一个 `pfproxy` 代理，矿机连接此代理
+
+```
+# VPS
+./pfproxy run -V -L relay+tls://:3366 -R kda.ss.poolflare.net:443 -R kda-asia.ss.poolflare.net:443 -R kda-us.ss.poolflare.net:443 -R kda-eu.ss.poolflare.net:443
+
+# 本地机器
+./pfproxy run -V -L :3333 -R relay+tls://vps-ip:3366 -V
+```
+
+
+#### CFX
+
+矿机使用 `SSL` 连接 VPS 代理
+
+```
+# VPS
+./pfproxy run -V -L tls://:3443 -R tls://cfx.ss.poolflare.net:3443 -R tls://cfx-asia.ss.poolflare.net:3443 -R tls://cfx-us.ss.poolflare.net:3443 -R tls://cfx-eu.ss.poolflare.net:3443
+```
+
+
 ## 联系
 
 Discord:
