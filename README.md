@@ -32,6 +32,15 @@ Flags:
 `:port` 代表监听所有网卡
 
 
+### 证书
+
+`pfproxy` 内置了 TLS 证书，如果需要使用其他 TLS 证书，需要在命令行参数中指定，例如：
+
+```
+./pfproxy run -L 'tls://:3443?cert=/path/to/cert&key=/path/to/key' -R tls://pool-address
+```
+
+
 ### 矿机支持 SSL
 
 ```
