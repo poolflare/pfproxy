@@ -79,7 +79,7 @@ Flags:
 ./pfproxy run -V -L relay+tls://:3366 -R kda.ss.poolflare.net:443 -R kda-asia.ss.poolflare.net:443 -R kda-us.ss.poolflare.net:443 -R kda-eu.ss.poolflare.net:443
 
 # 本地机器
-./pfproxy run -V -L :3333 -R relay+tls://vps-ip:3366 -V
+./pfproxy run -V -L :3333 -R relay+tls://vps-ip:3366
 ```
 
 
