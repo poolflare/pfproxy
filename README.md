@@ -10,11 +10,13 @@ Usage:
   pfproxy run [flags]
 
 Flags:
-  -h, --help                      help for run
-  -L, --listen stringArray        listen address(can be given multiple times)
-  -R, --remote stringArray        remote address(can be given multiple times)
-  -N, --max-num-mux-conns int32   max number of multiplexing connections (default 128)
-  -V, --verbose                   verbose mode
+      --disable-dot              disable dot
+  -h, --help                     help for run
+  -L, --listen stringArray       listen address(can be given multiple times)
+  -C, --max-inflight-conns int   max inflight multiplexing connections (default 32)
+  -S, --max-streams int          max streams per multiplexing session (default 16)
+  -R, --remote stringArray       remote address(can be given multiple times)
+  -V, --verbose                  verbose mode
 ```
 
 
